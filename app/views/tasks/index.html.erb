@@ -1,0 +1,14 @@
+<h1>Lista de Tareas</h1>
+
+<% @tasks.each do |task| %>
+<div class="row">
+  <div class="col-md">
+    <p><%= task.task %></p>
+  </div>
+  <div class="col-md">
+    <p><%= link_to 'Eliminar', task_path(task), method: :delete, data: { confirm: 'Está seguro?' } %></p>
+  </div>
+</div>
+<% end %>
+
+<p><%= link_to "Nueva Tarea", new_task_path %></p>
